@@ -5,7 +5,7 @@
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Competition](https://img.shields.io/badge/Zindi-MLT1%20Final%20Project-orange)
 
-> Fine-tuning multilingual transformer models to answer health questions in low-resource African languages (Luganda, Kiswahili, Akan, Amharic) — submitted as part of the ALU Machine Learning Techniques I Final Project.
+> Fine-tuning multilingual transformer models to answer health questions in low-resource African languages (Luganda, Kiswahili, Akan, Amharic) - submitted as part of the ALU Machine Learning Techniques I Final Project.
 
 ---
 
@@ -13,7 +13,7 @@
 
 Access to reliable health information is a critical challenge across sub-Saharan Africa. This project builds a multilingual model capable of understanding health-related questions in low-resource African languages and generating fluent, accurate responses in the same language.
 
-**Competition:** [Multilingual Health QA — Zindi × ITU/HASH](https://zindi.africa/competitions/multilingual-health-question-answering-in-low-resource-african-languages-challenge)
+**Competition:** [Multilingual Health QA - Zindi × ITU/HASH](https://zindi.africa/competitions/multilingual-health-question-answering-in-low-resource-african-languages-challenge)
 **Evaluation Metrics:** ROUGE-1 F1 (37%) · ROUGE-L F1 (37%) · LLM-as-a-Judge (26%)
 **Languages:** Luganda · Kiswahili · Akan · Amharic · English (Uganda, Ghana, Kenya, Ethiopia)
 **Best Public Score: 0.305464** (452x improvement over zero-shot baseline)
