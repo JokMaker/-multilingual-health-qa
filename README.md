@@ -65,7 +65,7 @@ Click the **Open in Colab** badge above or navigate to the `notebooks/` folder a
 | 2 | Fine-tune mT5-small + LoRA | mT5-small | r=16, 2 epochs, lr=1e-3 | 0.0922 | 0.0833 | — |
 | 3 | Improved decoding | mT5-small | repetition_penalty=1.3 | 0.1520 | 0.1228 | 0.145043 |
 | 4 | Oversample Amharic | mT5-small | Amharic 3x oversample | 0.1548 | 0.1286 | — |
-| 5 | Tokenisation analysis | — | Tokens/word per language | — | — | — |
+| 5 | Tokenisation analysis | - | Tokens/word per language | — | — | — |
 | 6 | Extended training | mT5-small | 5 epochs | 0.1444 | 0.1193 | — |
 | 7 | mT5-base + LoRA r=32 | mT5-base | r=32, Adafactor, 1 epoch | 0.1928 | 0.1565 | 0.211963 |
 | 8 | Greedy vs beam search | mT5-base | num_beams=1 vs 4 | 0.1998 | 0.1493 | — |
@@ -93,9 +93,9 @@ Click the **Open in Colab** badge above or navigate to the `notebooks/` folder a
 
 ## 🔑 Key Design Decisions
 
-- **Model choice:** AfriMT5-base (masakhane/afri-mt5-base) — mT5 continued-pretrained on 17 African languages, providing stronger representations for Akan, Luganda, Kiswahili, and Amharic
-- **PEFT/LoRA:** r=32, alpha=64, target_modules=["q","v"] — enables fine-tuning on T4/A100 without OOM errors
-- **Learning rate:** 1e-3 for LoRA (not 5e-5 which is for full fine-tuning — a critical distinction)
+- **Model choice:** AfriMT5-base (masakhane/afri-mt5-base) - mT5 continued-pretrained on 17 African languages, providing stronger representations for Akan, Luganda, Kiswahili, and Amharic
+- **PEFT/LoRA:** r=32, alpha=64, target_modules=["q","v"] - enables fine-tuning on T4/A100 without OOM errors
+- **Learning rate:** 1e-3 for LoRA (not 5e-5 which is for full fine-tuning - a critical distinction)
 - **Language-aware prompts:** "Answer this health question in [Language]: [Question]"
 - **Label masking:** Padding tokens replaced with -100 so loss ignores them
 - **Official Val.csv:** Used as validation set (6,686 examples) with full Train.csv for training
@@ -104,8 +104,8 @@ Click the **Open in Colab** badge above or navigate to the `notebooks/` folder a
 
 ## 📈 Key Findings
 
-1. **Model capacity** is the single most impactful factor — AfriMT5-base outperforms mT5-small regardless of training duration
-2. **Tokenisation fragmentation** explains Amharic's persistent low performance — 3.52 tokens/word vs 1.67 for English, a structural limitation of general-purpose multilingual tokenisers
+1. **Model capacity** is the single most impactful factor - AfriMT5-base outperforms mT5-small regardless of training duration
+2. **Tokenisation fragmentation** explains Amharic's persistent low performance - 3.52 tokens/word vs 1.67 for English, a structural limitation of general-purpose multilingual tokenisers
 3. **Decoding configuration** improved ROUGE-1 by 65% at zero training cost (Experiment 3)
 4. **More epochs consistently improve performance** — val loss decreased from 2.274 (1 epoch) to 1.796 (8 epochs) with no overfitting
 
@@ -115,7 +115,7 @@ Click the **Open in Colab** badge above or navigate to the `notebooks/` folder a
 
 This project involves health information in underrepresented languages. Key considerations:
 - Misinformation risk in maternal and reproductive health contexts
-- Performance disparity — Akan ROUGE-1: 0.308 vs Amharic ROUGE-1: 0.067 (4.6x gap)
+- Performance disparity - Akan ROUGE-1: 0.308 vs Amharic ROUGE-1: 0.067 (4.6x gap)
 - Responsible deployment requires human expert review before clinical use
 - AI tools (Claude, GitHub Copilot) were used for coding assistance and report writing
 
@@ -134,7 +134,7 @@ This project involves health information in underrepresented languages. Key cons
 ## 👤 Author
 
 **Jok John Maker Kur**
-BSE Year 4 · African Leadership University, Kigali, Rwanda
+BSE Year 3 · African Leadership University, Kigali, Rwanda
 MLT1 Final Project · June 2026
 
 ---
