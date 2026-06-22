@@ -26,13 +26,16 @@ Access to reliable health information is a critical challenge across sub-Saharan
 multilingual-health-qa/
 │
 ├── notebooks/
-│   ├── 01_eda.ipynb                        # Exploratory Data Analysis
+│   ├── 01-eda.ipynb                        # Exploratory Data Analysis
 │   ├── 02-baseline.ipynb                   # Experiment 1: Zero-shot baseline
 │   ├── 03-finetuning-experiments.ipynb     # Experiments 2–10 (mT5-small/base + LoRA)
 │   ├── 03b-afrimt5-experiments.ipynb       # AfriMT5 with official Val.csv (Kaggle)
-│   └── 03c_afrimt5_final.ipynb             # Final clean training run (Colab, best model)
+│   └── 03c_AfriMT5_final_.ipynb            # Final clean training run (Colab, best model)
 │
-├── submissions/                            # Zindi submission CSV files
+├── data/
+│   └── raw/                                # Competition data (Train, Val, Test CSVs)
+│
+├── results/                                # Submission CSVs and leaderboard screenshots
 ├── requirements.txt
 └── README.md
 ```
