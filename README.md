@@ -16,7 +16,7 @@ Access to reliable health information is a critical challenge across sub-Saharan
 **Competition:** [Multilingual Health QA - Zindi × ITU/HASH](https://zindi.africa/competitions/multilingual-health-question-answering-in-low-resource-african-languages-challenge)
 **Evaluation Metrics:** ROUGE-1 F1 (37%) · ROUGE-L F1 (37%) · LLM-as-a-Judge (26%)
 **Languages:** Luganda · Kiswahili · Akan · Amharic · English (Uganda, Ghana, Kenya, Ethiopia)
-**Best Public Score: 0.305464** (452x improvement over zero-shot baseline)
+**Best Public Score: 0.32171** (476x improvement over zero-shot baseline)
 
 ---
 
@@ -87,7 +87,9 @@ Click the **Open in Colab** badge above or navigate to the `notebooks/` folder a
 | #7 | AfriMT5 3 epochs, batched inference | 0.268595 |
 | #8 | AfriMT5 3 epochs, beam search | 0.277825 |
 | #9 | AfriMT5 5 epochs, beam search | 0.294970 |
-| **#10** | **AfriMT5 8 epochs, beam search** | **0.305464** |
+| #10 | AfriMT5 8 epochs, beam search | 0.305464 |
+| #11 | AfriMT5 10 epochs, beam search | 0.302760 |
+| **#12** | **AfriMT5 12 epochs, cosine scheduler** | **0.32171** |
 
 ---
 
@@ -107,7 +109,7 @@ Click the **Open in Colab** badge above or navigate to the `notebooks/` folder a
 1. **Model capacity** is the single most impactful factor - AfriMT5-base outperforms mT5-small regardless of training duration
 2. **Tokenisation fragmentation** explains Amharic's persistent low performance - 3.52 tokens/word vs 1.67 for English, a structural limitation of general-purpose multilingual tokenisers
 3. **Decoding configuration** improved ROUGE-1 by 65% at zero training cost (Experiment 3)
-4. **More epochs consistently improve performance** — val loss decreased from 2.274 (1 epoch) to 1.796 (8 epochs) with no overfitting
+4. **More epochs consistently improve performance** — val loss decreased from 2.274 (1 epoch) to 1.725 (12 epochs) with a cosine learning rate scheduler producing the best final score of 0.32171
 
 ---
 
